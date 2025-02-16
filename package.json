@@ -1,0 +1,12 @@
+{
+  "name": "-sbd1-p1_202201947",
+  "version": "1.0.0",
+  "description": "Repositorio Proyecto 1 Sistemas de Bases de Datos 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
