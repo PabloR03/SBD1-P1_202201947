@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8E728CF9-0E26-E45B-F23B-49F7AAAC6830" name="Empresas_Transporte">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>2AF509DE-3257-960F-78D0-FB211857DEB9</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id_Empresa_Transporte" id="CE340A14-67CF-430A-1745-3DF6CB570FE2">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>7B3ADFA5-CAAB-7185-8F6D-8F7DC2FDCFEA</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="4CD40EEC-9565-A795-05D5-CF3448761D4B">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>CD2F3343-8288-4084-B200-E8892791758F</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Informacion_Contacto" id="E601132C-261E-E164-6762-3802B9570EFE">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>A987D37E-F095-425D-611C-2AB1188A6D81</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Created_At" id="9346348C-42B8-5D70-77A9-D26588FDE8D1">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>37818420-CC52-43EC-C40A-12FC0F2B8D7B</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Updated_At" id="89EA4A36-F073-98C5-5630-3FB64E0D0612">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>E47E07BD-7B73-37C8-D67D-0B8DE862B798</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E693FDED-0B93-86F2-BB89-C7A3E9DBD8C4" name="Empresas_Transporte_PK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>3706904A-FE3E-D20E-6D46-1B346358C10F</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CE340A14-67CF-430A-1745-3DF6CB570FE2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

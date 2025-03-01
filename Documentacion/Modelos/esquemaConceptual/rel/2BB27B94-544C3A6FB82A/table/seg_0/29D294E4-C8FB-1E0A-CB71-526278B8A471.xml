@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="29D294E4-C8FB-1E0A-CB71-526278B8A471" name="Imagenes">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>0BDEE859-916A-7C59-12FE-267DD8A5FE9E</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id_Imagen" id="1CD584BF-8F7E-AB0B-D56A-076DD6742CEB">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>4A9DBFB7-0E2C-D641-09C9-7C26247C14E9</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Productos_Id_Producto" id="7FB6C8B6-068C-9D89-977A-3B96E5506BE4">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>9081B5FB-AD2E-134F-A836-073347E03058</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="37F58E58-147D-F054-AB55-69AA66BABD0C" referredColumn="A10EA74C-82C3-BBCC-A457-A32D67E18543"/>
+</associations>
+</Column>
+<Column name="Url_Imagen" id="503056FC-17A2-645C-86B1-E92743ABB9EC">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>8BB128DE-90E7-5CC2-9C21-822D2FA8E9DE</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Created_At" id="D4BFF7C3-18DC-EA41-4F8A-2AA89CD2FE98">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>AE50A243-BD43-54C5-0D83-068C123929F8</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Updated_At" id="70D35E3E-74A3-2B69-5305-84CD399C09F3">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>DE0F9BF2-5A38-B4D5-8871-A55EF9F1099A</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7A7260F0-FD21-D0F5-C96E-7709045C1298" name="Imagenes_PK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>AB9B405D-124F-988B-4E54-B570FBE1D5B5</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1CD584BF-8F7E-AB0B-D56A-076DD6742CEB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9B440E62-A0B2-AD02-28EF-884DB0729380" name="Imagenes_Productos_FK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>5D422DBC-6A55-583B-DDC0-E4FEE2784CE8</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7FB6C8B6-068C-9D89-977A-3B96E5506BE4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

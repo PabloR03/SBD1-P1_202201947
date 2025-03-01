@@ -14,4 +14,114 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id_Devolucion" id="DF793C99-FD00-00E5-A5A0-1660D217953A">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:17:43 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id_Orden" id="A998FB6B-E117-5C25-EAC4-04873939DCEF">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:34:19 UTC</createdTime>
+<generatorID>FE228851-8EE1-AE7B-9299-8D6F5A83A679</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<referedAttribute>D5804E48-B1D1-407F-3494-6FD231290BC7</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Fecha_Solicitud" id="EEE8DA80-0A47-D602-04CD-EBF4846C6543">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:18:06 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Motivo" id="D68804D2-3E61-AD87-947F-4C10D1AB09C8">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:18:20 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Estado" id="1363E228-1879-D46E-6706-21E3C25E3046">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:18:38 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Created_At" id="1CD49A58-4DBE-99E3-4A7F-EAE1C50C5437">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:19:03 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Updated_At" id="AB975BE0-B906-E07E-CBA2-43258FEF8CE6">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:19:12 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D585910C-14E1-0A52-D173-A957584EDE8D" name="Devoluciones PK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:03:17 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>6254533F-BB3D-6F3E-2EA0-E434024AFE9A</attributeRef>
+<attributeRef>DF793C99-FD00-00E5-A5A0-1660D217953A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>

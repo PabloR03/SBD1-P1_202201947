@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="AD19BDD0-4C68-E416-1565-A99A6497DFA5" containerWithKeyObject="4DB2D9A4-B8A1-CE59-0D04-2030A83CF699" localFKIndex="2F538A4F-CEE1-F435-F738-D0BFCD2364E7" name="Traslado_Productos_Sedes_FK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>2296339F-AAA8-C376-BD4D-2882404EA6E0</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<referredTableLongName>Sedes</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>90A907CA-3BD0-780C-09E4-02215F4CD352</referredTableID>
+<keyObject>DD1E0B29-0DF3-CF7E-BC9B-3CDC6AF5230C</keyObject>
+<referredKeyID>DD1E0B29-0DF3-CF7E-BC9B-3CDC6AF5230C</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Id_Sede</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

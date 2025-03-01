@@ -14,4 +14,115 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id_Detalle_Traslado" id="4D0FB215-2459-BC95-2C8D-99F0E0868C26">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:03:19 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id_Traslado" id="991EEA32-6C8A-D066-522F-81BA8C2E5E77">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:35:42 UTC</createdTime>
+<generatorID>363A743B-16F2-122E-ED44-79C371250ACD</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<referedAttribute>9EF814A1-D2C7-44FD-78DA-880FAEEDD3CE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id_Producto" id="B58E48FD-7117-AC89-3644-38DD93C0B968">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:37:45 UTC</createdTime>
+<generatorID>CD0D7C90-E6A9-DE53-B2C7-D7CD1E9B9A00</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<referedAttribute>B579B6BA-E9EE-CA3A-14EF-F44825717FCC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Cantidad_Transferida" id="120AF4D3-FE1B-120E-D177-4366726E00B8">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:03:39 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Estado_Producto" id="E799496C-35DC-2247-77B8-A7A3A3674407">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:03:58 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Created_At" id="861301D8-E8CF-D060-BF7B-8B14BCB6073C">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:04:29 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Updated_At" id="81B4238E-567A-6415-648B-525BAC3E4767">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:05:00 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="73760513-0B3E-B3ED-80C5-5394DD120521" name="Detalle_Traslado_Productos PK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:03:38 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>991EEA32-6C8A-D066-522F-81BA8C2E5E77</attributeRef>
+<attributeRef>B58E48FD-7117-AC89-3644-38DD93C0B968</attributeRef>
+<attributeRef>4D0FB215-2459-BC95-2C8D-99F0E0868C26</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>

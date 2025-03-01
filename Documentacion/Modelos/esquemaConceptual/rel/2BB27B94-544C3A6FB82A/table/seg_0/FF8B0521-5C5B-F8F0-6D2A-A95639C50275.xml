@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FF8B0521-5C5B-F8F0-6D2A-A95639C50275" name="Categorias">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>EB84DE13-AA01-179E-8621-8EA6A2C3AA64</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id_Categoria" id="B9A1FA26-EE22-7C8A-6EC4-16F949637BA7">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>EAD3F5D0-77B4-BA34-F6CC-90B82DC5DDF2</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="8E2D7E68-8824-19C5-C56E-CC460F52BA85">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>D78B534D-DB18-5B7A-E63F-AA280C051FE2</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Descripcion" id="FB582D29-E320-6E39-00E5-1F74866B3624">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>87FFF18B-95A3-34B2-A700-EF2FA6F117FD</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Created_At" id="DB38185B-8E06-65C9-2B1C-F1F0813D6D74">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>89703018-5ED7-5847-78DF-27E764E4256B</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Updated_At" id="7C641939-5E6D-02EE-8B04-3C5FD4DC2504">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>E9DFE6BD-744A-D9D4-2861-DE1CB841FD49</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="935C44B6-BD00-771C-5A10-2646AFC2AB67" name="Categorias_PK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>1C39575C-5AB0-B0E8-0A8C-AE9AD7527491</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B9A1FA26-EE22-7C8A-6EC4-16F949637BA7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

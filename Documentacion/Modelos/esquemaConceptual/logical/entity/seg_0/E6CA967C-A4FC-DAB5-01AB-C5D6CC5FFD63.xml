@@ -14,4 +14,86 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id_Sede" id="3E823209-A517-DD6A-23DC-9813355AAD68">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:52:10 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nombre" id="759682FB-BF67-4D85-91AA-918F4B182FD0">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:52:19 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Direccion" id="ABB09D8B-FBD1-D9D8-9EBE-7FDB102DDE00">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:52:36 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Created_At" id="40A758D8-40F8-E577-E9BE-AB2769DE2DF0">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:53:01 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Updated_At" id="5626BBCA-2788-A716-C6F0-AD91022301DA">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:53:16 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="DE7F5B06-AC49-2DC7-C863-5DB113D69B41" name="Sedes PK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:52:17 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>3E823209-A517-DD6A-23DC-9813355AAD68</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>

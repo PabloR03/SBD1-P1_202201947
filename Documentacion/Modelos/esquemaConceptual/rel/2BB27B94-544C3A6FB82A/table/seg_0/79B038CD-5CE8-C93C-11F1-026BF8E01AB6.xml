@@ -1,0 +1,211 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="79B038CD-5CE8-C93C-11F1-026BF8E01AB6" name="Usuarios">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>E0B47F12-6849-3EDE-FCB9-B105958530EF</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id_Usuario" id="64691FA7-3651-2655-9A52-CDF4BBE54A9F">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>2F191378-389C-3FF5-CE54-E04EEAE589E9</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Rol" id="8B3814F8-58A2-9D6E-E362-6B06AD1DB6A3">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>90C91C2A-9D9F-30C4-56D7-D09EC7AE36AB</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cui" id="CD2364B0-8886-736F-F434-CE553368BACE">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>6302534E-6C99-EB01-7F5E-CD4C5EE6D5DD</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="F21E3A26-DF0D-5FB0-1790-A6A76EB5BBCB">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>70D9DC9D-78B6-6FDC-72FF-C0CE9E03EE53</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Apellido" id="93A8A3D9-2548-6083-AF5B-F77DCEA02680">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>F8FD964F-D69D-6DCD-45D4-0E71C6C0DD50</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Correo" id="82C574F7-416F-657B-404C-240ACBB84EFA">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>568A15C6-A892-3C9A-966A-52F0BB824817</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Telefono" id="DFAFFD35-47FE-18FB-5138-F93310642A47">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>C0E794E0-7F1B-373D-DC41-38AEA82DA76D</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Estado" id="CD4BC250-9FED-7D06-FF63-80097B0E76A6">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>CF60B29E-225E-DFDA-CC9A-6D86EFBED73B</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Fecha_Registro" id="F89D7725-973C-06CE-7F26-A835E525E0BA">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>AFCCF6B3-9C27-C57B-C147-1E5EAED53760</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Estado_Correo" id="F6D199D0-8CF4-8C01-CF2F-CF0BF94F46ED">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>5A70762C-391E-0FBC-F8CD-7DD1481496A2</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Created_At" id="26BAD107-FCFC-DBF1-DB24-59B7D9B1A050">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>BD809FB2-7D6E-8542-D4EE-6E551B68B81D</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Updated_At" id="D3AEE0CF-7558-E279-3758-E7F614EB9391">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>3322B78F-553E-A285-D49C-AF42E1CEF940</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Trabajadores_Id_Trabajador" id="8753701E-AF11-F7CF-3F65-E2ABC876FBF2">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>CDA6414D-0AEC-DF3A-70FF-60328917999B</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="55961B67-1D75-8834-5FD2-3618F8946F8D" referredColumn="D88004EE-2A2D-AAB2-39CE-A5137B71068E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C76D6EB3-85B1-5239-9649-74A8FBFA178F" name="Usuarios_PK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>2A5109A5-7BEB-A292-8A36-C67871DFD2F3</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="64691FA7-3651-2655-9A52-CDF4BBE54A9F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C2743126-8294-1ED6-14A9-0793DBBE8641" name="Usuarios__IDX">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>FE76E54B-1C26-CA1F-CB18-1837685A3DD3</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="8753701E-AF11-F7CF-3F65-E2ABC876FBF2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="27588E10-ED24-AC16-0F0D-04092F00D5BC" name="Usuarios_Trabajadores_FK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>FE76E54B-1C26-CA1F-CB18-1837685A3DD3</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8753701E-AF11-F7CF-3F65-E2ABC876FBF2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

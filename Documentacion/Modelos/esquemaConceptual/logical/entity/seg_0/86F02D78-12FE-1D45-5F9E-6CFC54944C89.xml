@@ -14,4 +14,100 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id_Metodo_Pago_Usuario" id="6CD3F0C6-83A1-020C-1A82-45454BD1B7BD">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 13:52:05 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id_Metodo_Pago" id="47ABEB2E-C991-6598-CDE8-7F94CFC93007">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 13:54:54 UTC</createdTime>
+<generatorID>FA646318-E75B-5E7D-9FD1-48E55E17C6C6</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<referedAttribute>D82DF7F6-CBD7-9C32-284C-919BEA6DFC7F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Detalles" id="B4192EBC-7085-F7EF-3590-C24319FD8BEF">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 13:52:23 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Created_At" id="40479EE5-E2ED-E5B8-9AE9-0388601EF9D8">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 13:52:40 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Updated_At" id="1B7594C8-E93F-1AF4-EF75-7FE47F5C4BDB">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 13:53:38 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id_Usuario " id="1C8F443F-D478-971B-73C3-8647F6622FB0">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 02:39:38 UTC</createdTime>
+<generatorID>D17AF01B-9B71-8FAD-2B74-B3A3EBE7A32A</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<referedAttribute>2F191378-389C-3FF5-CE54-E04EEAE589E9</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="36A1B500-0A29-01C3-28F3-DF4667986CA6" name="Metodos_Pago_Usuario PK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 02:34:59 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>6CD3F0C6-83A1-020C-1A82-45454BD1B7BD</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>

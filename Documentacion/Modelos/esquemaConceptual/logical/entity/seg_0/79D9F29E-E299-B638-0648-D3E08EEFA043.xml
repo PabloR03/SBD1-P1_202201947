@@ -14,4 +14,86 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id_Departamento" id="D503B61A-88CF-FBD5-3BB6-0CD33D9B3AEC">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:03:31 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nombre" id="D7303748-9A31-47A9-7A37-F0FAD64C8E4F">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:03:44 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Descripcion" id="BAF533E6-1205-899D-B154-7E29094F9B4C">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:04:13 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Created_At" id="6E118FB4-7904-5BF6-C0A8-007045FEE34B">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:04:24 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Updated_At" id="7BB13748-4CE1-728E-B37C-D69B44E8F98D">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:04:44 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0A6EF3D0-3BF6-BFED-FB34-3DC50F0C3B9E" name="Departamentos PK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:03:41 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D503B61A-88CF-FBD5-3BB6-0CD33D9B3AEC</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>

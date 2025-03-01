@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F19C60C7-5D80-A87D-11C1-413931208FFF" containerWithKeyObject="DB00BE15-5471-0834-9CB1-566BB156523D" localFKIndex="0DD837C6-FC78-16F0-000F-112CAA30E3AB" name="Inventario_Sedes_FK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>D5B09092-C5EF-2C20-4E36-7587B088C105</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<referredTableLongName>Sedes</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>90A907CA-3BD0-780C-09E4-02215F4CD352</referredTableID>
+<keyObject>DD1E0B29-0DF3-CF7E-BC9B-3CDC6AF5230C</keyObject>
+<referredKeyID>DD1E0B29-0DF3-CF7E-BC9B-3CDC6AF5230C</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Id_Sede</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

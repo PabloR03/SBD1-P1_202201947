@@ -14,4 +14,113 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id_Detalle" id="A9437640-3E2E-7621-1E27-1A284D1FE125">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:40:26 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id_Orden" id="13482C6F-886A-BAE9-3746-F039008FECC3">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:34:19 UTC</createdTime>
+<generatorID>229CE44F-2A65-513E-AFE5-B1B10331295F</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<referedAttribute>D5804E48-B1D1-407F-3494-6FD231290BC7</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id_Producto" id="370174B7-87C2-21AD-4F99-0F290BFD66A3">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:30:59 UTC</createdTime>
+<generatorID>A1AA28A1-590D-69B6-7D5E-22FBD9DEEA59</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<referedAttribute>B579B6BA-E9EE-CA3A-14EF-F44825717FCC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Cantidad" id="D1C6AE29-2DCE-0C97-7691-DF92D66E2035">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:40:36 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Precio_Unitario" id="40CAA064-47B3-F075-7C60-39DEB1342080">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:40:50 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Created_At" id="13763A2D-57B1-C986-B792-EB246B1EC4D2">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:40:50 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Updated_At" id="C9315D06-CBAB-12E5-A34F-0894E30DDDC3">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:41:45 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="2D83E9EC-DBCC-B04F-5156-47073A442B39" name="Detalle_Orden PK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:03:17 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>13482C6F-886A-BAE9-3746-F039008FECC3</attributeRef>
+<attributeRef>A9437640-3E2E-7621-1E27-1A284D1FE125</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>

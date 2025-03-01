@@ -1,0 +1,138 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0315BE45-0F27-4B01-A482-86C7F43F5C38" name="Pagos">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>9B05DB10-E3C3-04A9-8C90-8C617D559D41</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id_Pago" id="445B4E13-E7DD-8069-5B1A-00C0A30575D6">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>A552D352-A415-8E8B-A114-90EA342A80C0</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Orden_Compra_Id_Orden" id="7459BB88-A9CB-132E-0018-A7454FC953FC">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>24B37422-E174-E401-1FB4-5C714A9F048E</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="310768C5-4781-0A1F-1382-7CC4D0907C30" referredColumn="4F8E04DC-271D-2F14-5DE0-C429F713EB92"/>
+</associations>
+</Column>
+<Column name="Fecha_Transaccion" id="9E6D96FF-4C67-5BA3-C346-445D0E91CF6F">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>F2E64F5B-3F48-B51B-267C-77917B985437</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Metodos_Pago_Id_Metodo_Pago" id="FAD840CD-0442-4CB7-EEBA-B08B7CBA1D0F">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>F75A5B00-ABE4-27B8-F3BE-37CDCFCB3C0E</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1000AA2F-3219-34FD-C7BB-12C41B0A5E5F" referredColumn="A97C1432-9F88-4B4F-2F90-A7A6DA890FF6"/>
+</associations>
+</Column>
+<Column name="Estado" id="AABBB990-0820-0BB6-F6F2-DDEE38A997A2">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>96F0B14A-7B95-6AFB-2FC8-18E657B34C77</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Created_At" id="21886C1C-6659-9D4F-1835-0DF120998CAF">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>B3F91516-A846-85BA-591B-0F8BF124E445</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Updated_At_1" id="21458E25-0668-0349-D632-8E242644B6F9">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>9BE27764-7C4E-E43C-1D0A-7846215A0E88</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E6497B65-B9EA-EA39-EE54-CB73EDCB3440" name="Pagos_PK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>C5FB2A89-BC79-0788-AB90-ED21BF44B968</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="445B4E13-E7DD-8069-5B1A-00C0A30575D6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C103863C-F806-2A7C-34F4-44B55166210F" name="Pagos_Orden_Compra_FK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>DB4B13A8-A4BA-68F8-D635-2511A2677FBC</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7459BB88-A9CB-132E-0018-A7454FC953FC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C8ABEC1E-EA5D-7E46-8A27-CFDA816601B8" name="Pagos_Metodos_Pago_FK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>E247685F-15A2-9108-52FE-43B49506785D</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FAD840CD-0442-4CB7-EEBA-B08B7CBA1D0F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

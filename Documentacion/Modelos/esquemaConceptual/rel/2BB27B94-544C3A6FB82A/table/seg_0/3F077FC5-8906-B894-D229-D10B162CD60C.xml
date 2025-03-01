@@ -1,0 +1,138 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3F077FC5-8906-B894-D229-D10B162CD60C" name="Detalle_Orden">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>C6BBAE39-6902-0E3F-72D7-A23D6BE1A112</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id_Detalle" id="25DE4372-D417-7B40-0008-F8B1E4C72B18">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>A9437640-3E2E-7621-1E27-1A284D1FE125</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Orden_Compra_Id_Orden" id="46A73FC9-E5F3-2C75-23E4-147D23FE15AE">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>13482C6F-886A-BAE9-3746-F039008FECC3</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="05025485-1388-1F0E-1892-C5558989D0E8" referredColumn="4F8E04DC-271D-2F14-5DE0-C429F713EB92"/>
+</associations>
+</Column>
+<Column name="Productos_Id_Producto" id="83B58B74-6298-08E8-6A20-E959D75166EC">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>370174B7-87C2-21AD-4F99-0F290BFD66A3</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="725F1891-2CA9-FFD4-7D9B-CE5FBD82D416" referredColumn="A10EA74C-82C3-BBCC-A457-A32D67E18543"/>
+</associations>
+</Column>
+<Column name="Cantidad" id="10C177CC-5523-9D14-DAEB-56685465A9F7">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>D1C6AE29-2DCE-0C97-7691-DF92D66E2035</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Precio_Unitario" id="10748BB1-6FC8-3156-D5FC-4904C09CB4FA">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>40CAA064-47B3-F075-7C60-39DEB1342080</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Created_At" id="0D29766A-C3C0-D3FB-691A-FC9E661071B4">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>13763A2D-57B1-C986-B792-EB246B1EC4D2</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Updated_At" id="F5A1672F-62D6-D87B-508B-B45D90CCC912">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>C9315D06-CBAB-12E5-A34F-0894E30DDDC3</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1BCC4F3E-DEFF-0158-B237-EB0C73CC77B4" name="Detalle_Orden_PK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>2D83E9EC-DBCC-B04F-5156-47073A442B39</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="46A73FC9-E5F3-2C75-23E4-147D23FE15AE"/>
+<colUsage columnID="25DE4372-D417-7B40-0008-F8B1E4C72B18"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EFED7B0D-EBD3-D8E8-1A37-E346B4D7D5A5" name="Detalle_Orden_Productos_FK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>A1AA28A1-590D-69B6-7D5E-22FBD9DEEA59</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="83B58B74-6298-08E8-6A20-E959D75166EC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0D846DBC-D601-4787-B60D-44F3994C236F" name="Detalle_Orden_Orden_Compra_FK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>229CE44F-2A65-513E-AFE5-B1B10331295F</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="46A73FC9-E5F3-2C75-23E4-147D23FE15AE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

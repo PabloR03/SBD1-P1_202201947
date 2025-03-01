@@ -1,0 +1,140 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5B57A8EB-4FB8-A434-9477-A2A65F5A3F92" name="Detalle_Traslado_Productos">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>A5748218-9F16-558B-0B90-CF83D8FBADF5</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id_Detalle_Traslado" id="7EFCE05E-F8A4-D3D4-3D15-D6B57A40B530">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>4D0FB215-2459-BC95-2C8D-99F0E0868C26</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Traslado_Productos_Id_Traslado" id="04B6A578-010D-96BA-D806-8C8B83441A2A">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>991EEA32-6C8A-D066-522F-81BA8C2E5E77</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6B7BB998-71E3-A75C-CD55-B40E8B9EA77E" referredColumn="0770FEF5-5ED2-80C3-AB95-004A1F8C03CF"/>
+</associations>
+</Column>
+<Column name="Productos_Id_Producto" id="61DCF213-D067-2F2B-B8B5-29D8DE9C05E3">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>B58E48FD-7117-AC89-3644-38DD93C0B968</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B306B06E-E4A0-42D4-E759-5C5929347B1F" referredColumn="A10EA74C-82C3-BBCC-A457-A32D67E18543"/>
+</associations>
+</Column>
+<Column name="Cantidad_Transferida" id="54360262-018C-B5D9-A39E-FB57B991100A">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>120AF4D3-FE1B-120E-D177-4366726E00B8</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Estado_Producto" id="D8E23867-19DE-509F-E108-00C689D49D06">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>E799496C-35DC-2247-77B8-A7A3A3674407</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Created_At" id="139CB61F-9107-C617-BE24-B3B0AB6918A7">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>861301D8-E8CF-D060-BF7B-8B14BCB6073C</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Updated_At" id="B01BD877-9C15-7EAF-27F6-BA52F93040A0">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>81B4238E-567A-6415-648B-525BAC3E4767</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="80651D0A-55EE-BFC7-5599-CA8EF1B32E19" name="Detalle_Traslado_Productos_PK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:48 UTC</createdTime>
+<generatorID>73760513-0B3E-B3ED-80C5-5394DD120521</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="04B6A578-010D-96BA-D806-8C8B83441A2A"/>
+<colUsage columnID="61DCF213-D067-2F2B-B8B5-29D8DE9C05E3"/>
+<colUsage columnID="7EFCE05E-F8A4-D3D4-3D15-D6B57A40B530"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="045B6471-C0F8-E64E-82DC-2EEDCFF24226" name="Detalle_Traslado_Productos_Productos_FK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>CD0D7C90-E6A9-DE53-B2C7-D7CD1E9B9A00</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="61DCF213-D067-2F2B-B8B5-29D8DE9C05E3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4E3719A1-FF03-1797-A301-27EA70B04A4C" name="Detalle_Traslado_Productos_Traslado_Productos_FK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:39:49 UTC</createdTime>
+<generatorID>363A743B-16F2-122E-ED44-79C371250ACD</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="04B6A578-010D-96BA-D806-8C8B83441A2A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

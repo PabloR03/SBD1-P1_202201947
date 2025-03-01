@@ -14,4 +14,112 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id_Traslado" id="9EF814A1-D2C7-44FD-78DA-880FAEEDD3CE">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:54:26 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Fecha_Movimiento" id="DD5A8BD4-C1E0-A7DF-E1E1-7BEED012DF30">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:54:33 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id_Sede" id="2256E94E-09E7-A56D-C72B-9EF6496E1E5F">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:53:27 UTC</createdTime>
+<generatorID>2296339F-AAA8-C376-BD4D-2882404EA6E0</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<referedAttribute>3E823209-A517-DD6A-23DC-9813355AAD68</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Fecha_Estimada_Llegada" id="E2B427E1-C09B-11B8-D01B-91361831113C">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:54:42 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id_Empresa_Transporte" id="B1E0E356-61A4-FFC5-125F-B1D4C15CDC75">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:48:09 UTC</createdTime>
+<generatorID>0158D864-E337-159C-8C3E-00D308506C4A</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<referedAttribute>7B3ADFA5-CAAB-7185-8F6D-8F7DC2FDCFEA</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Created_At" id="1E0F9745-EA95-337B-F57B-E8DC02440BAE">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:54:56 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Updated_At" id="9BB4EC45-03E7-9880-C35A-3975710DA255">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:55:10 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0048750C-6E67-56CC-AFB0-DA82D63FA4FD" name="Traslado_Productos PK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:46:28 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>9EF814A1-D2C7-44FD-78DA-880FAEEDD3CE</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>

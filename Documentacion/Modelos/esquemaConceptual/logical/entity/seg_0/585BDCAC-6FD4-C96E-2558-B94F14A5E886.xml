@@ -14,4 +14,99 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id_Inventario" id="789BC116-28AB-98FD-E015-26554562ADD1">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:50:26 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id_Producto" id="54F73438-9A2C-B231-88F0-B8DDA71FE154">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 15:25:58 UTC</createdTime>
+<generatorID>F305AB69-DF85-03C6-621B-63F6FB30AA4E</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<referedAttribute>B579B6BA-E9EE-CA3A-14EF-F44825717FCC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id_Sede" id="D2763000-DB0F-432A-475C-832CCCE2D7E3">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:53:27 UTC</createdTime>
+<generatorID>D5B09092-C5EF-2C20-4E36-7587B088C105</generatorID>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<referedAttribute>3E823209-A517-DD6A-23DC-9813355AAD68</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Cantidad" id="D1A30DAE-2377-ABC6-C96F-9407027B829B">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:50:39 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Created_At" id="9426334B-AD82-1479-AB0A-3629FDF15394">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:51:07 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Updated_At" id="4A133E67-4A54-9F44-0DF8-D4FC2C65D532">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:51:13 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="CEC39D68-D287-0A86-E57F-107205B5C6B5" name="Inventario PK">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 14:51:28 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>789BC116-28AB-98FD-E015-26554562ADD1</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>
