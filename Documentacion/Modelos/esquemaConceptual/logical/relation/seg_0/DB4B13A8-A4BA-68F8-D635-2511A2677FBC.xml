@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_19" directorySegmentName="seg_0" id="DB4B13A8-A4BA-68F8-D635-2511A2677FBC">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-01 02:23:49 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<engineerTo>
+<item key="2BB27B94-0AA0-0563-2FD0-544C3A6FB82A" value="true"/>
+</engineerTo>
+<identifying>true</identifying>
+<nameOnSource>Multiples</nameOnSource>
+<nameOnTarget>.</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>5B91CC8A-95D8-AD14-7D8C-5446154BF39C</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>9B05DB10-E3C3-04A9-8C90-8C617D559D41</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
