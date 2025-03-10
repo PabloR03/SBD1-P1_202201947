@@ -46,6 +46,18 @@
 <colAssociation fkAssociation="AD19BDD0-4C68-E416-1565-A99A6497DFA5" referredColumn="C454431E-E060-54BB-9FDC-D5563FCABBB0"/>
 </associations>
 </Column>
+<Column name="Estado" id="AABF3AE4-BB38-859E-9D91-084F6122EDC7">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-08 06:02:38 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="Fecha_Estimada_Llegada" id="4AD6C8F7-2F0D-EA83-809B-1E78345B8B61">
 <createdBy>rodri</createdBy>
 <createdTime>2025-03-01 15:39:49 UTC</createdTime>
@@ -58,7 +70,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Empresas_Transporte_Id_Empresa_Transporte" id="6D0AB629-9EC5-9E83-FF28-BC9FA11C8DF7">
+<Column name="Id_Empresa_Transporte" id="6D0AB629-9EC5-9E83-FF28-BC9FA11C8DF7">
 <createdBy>rodri</createdBy>
 <createdTime>2025-03-01 15:39:49 UTC</createdTime>
 <generatorID>B1E0E356-61A4-FFC5-125F-B1D4C15CDC75</generatorID>

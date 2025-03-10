@@ -82,6 +82,18 @@
 <ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="Contrasena" id="97D98726-1D78-630B-55D4-519A2A92CC50">
+<createdBy>rodri</createdBy>
+<createdTime>2025-03-08 06:26:27 UTC</createdTime>
+<ownerDesignName>esquemaConceptual</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="Telefono" id="DFAFFD35-47FE-18FB-5138-F93310642A47">
 <createdBy>rodri</createdBy>
 <createdTime>2025-03-01 15:39:49 UTC</createdTime>

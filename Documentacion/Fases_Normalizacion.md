@@ -2,11 +2,10 @@
 
 Entidades a utilizar:
 
-```markdown
 ### Usuarios
     Id_Usuario (PK)
     Rol (Cliente, Trabajador, etc.)
-    Cui
+    Identificacion_Nacional
     Nombre
     Apellido
     Correo
@@ -21,7 +20,7 @@ Entidades a utilizar:
 
 ### Trabajadores
     Id_Trabajador (PK)
-    Cui
+    Identificacion_Nacional
     Nombre
     Apellido
     Cargo
@@ -104,17 +103,16 @@ Entidades a utilizar:
     Created_At
     Updated_At
 
-```
 
 ## 1 Forma normal
 
 Aplicando principios de normalización, se asegura que no haya duplicación de datos y que cada celda contenga un solo valor, lo que facilita las operaciones de búsqueda, inserción, actualización y eliminación de datos.
 
-Usuarios
+# Usuarios
 
 - Id_Usuario(PK)
 - Rol (Cliente, Trabajador, etc.)
-- Cui
+- Identificacion_Nacional
 - Nombre
 - Apellido
 - Correo
@@ -127,15 +125,15 @@ Usuarios
 - Created_At
 - Updated_At
 
-| Id_Usuario (PK) | Rol | Cui | Nombre | Apellido | Correo | Telefono | Estado | Fecha_Registro | Estado_Correo | Direccion | Metodo_Pago | Created_At | Updated_At |
+| Id_Usuario (PK) | Rol | Identificacion_Nacional | Nombre | Apellido | Correo | Telefono | Estado | Fecha_Registro | Estado_Correo | Direccion | Metodo_Pago | Created_At | Updated_At |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 001 | Cliente | 1234567890123 | Juan | Pérez | juan.perez@email.com | 55123456 | Activo | 2024-01-15 | Confirmado | Zona 10, Ciudad de Guatemala | Tarjeta | 2024-01-15 10:30:00 | 2024-02-20 14:45:00 |
 | 002 | Trabajador | 9876543210123 | María | González | maria.gonzalez@empresa.com | 42789123 | Activo | 2023-11-05 | Confirmado | Zona 4, Ciudad de Guatemala | Transferencia | 2023-11-05 09:15:00 | 2024-01-30 11:20:00 |
 
-Trabajadores 
+# Trabajadores 
 
 - Id_Trabajador (PK)
-- Cui
+- Identificacion_Nacional
 - Nombre
 - Apellido
 - Cargo
@@ -147,12 +145,12 @@ Trabajadores
 - Created_At
 - Updated_At
 
-| Id_Trabajador (PK) | Cui | Nombre | Apellido | Cargo | Departamento | Telefono | Correo_Institucional | Id_Sede (FK) | Estado | Created_At | Updated_At |
+| Id_Trabajador (PK) | Identificacion_Nacional | Nombre | Apellido | Cargo | Departamento | Telefono | Correo_Institucional | Id_Sede (FK) | Estado | Created_At | Updated_At |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | T001 | 9876543210123 | Carlos | Ramírez | Vendedor | Ventas | 54321678 | carlos.ramirez@empresa.com | S001 | Activo | 2023-10-15 08:30:00 | 2024-01-20 16:45:00 |
 | T002 | 4567891230123 | Ana | López | Gerente | Administración | 58769432 | ana.lopez@empresa.com | S002 | Activo | 2023-08-10 09:15:00 | 2024-02-05 10:30:00 |
 
-Sedes
+# Sedes
 
 - Id_Sede (PK)
 - Nombre
@@ -187,12 +185,12 @@ Productos
 
 Orden
 
-- **Id_Orden (PK)**
-- **Id_Usuario (FK, referencia a Usuarios)**
-- **Id_Departamento (FK, referencia a Departamentos)**
-- **Id_Metodo_Pago (FK, referencia a Metodos_Pago)**
-- **Created_At**
-- **Updated_At**
+Id_Orden (PK)
+Id_Usuario (FK, referencia a Usuarios)
+Id_Departamento (FK, referencia a Departamentos)
+Id_Metodo_Pago (FK, referencia a Metodos_Pago)
+Created_At
+Updated_At
 
 | Id_Orden (PK) | Id_Usuario (FK) | Id_Departamento (FK) | Id_Metodo_Pago (FK) | Created_At           | Updated_At           |
 |--------------|---------------|---------------------|-------------------|----------------------|----------------------|
@@ -201,13 +199,14 @@ Orden
 
 Pagos
 
-- **Id_Pago (PK)**
-- **Id_Usuario (FK, referencia a Usuarios)**
-- **Id_Metodo_Pago (FK, referencia a Metodo_Pago)** (Tarjeta, Transferencia, etc.)
-- **Monto_Total**
-- **Estado** (Pendiente, Aprobado, Rechazado)
-- **Created_At**
-- **Updated_At**
+Id_Pago (PK)**
+Id_Usuario (FK, referencia a Usuarios)**
+Id_Orden
+Id_Metodo_Pago (FK, referencia a Metodo_Pago)** (Tarjeta, Transferencia, etc.)
+Monto_Total**
+Estado** (Pendiente, Aprobado, Rechazado)
+Created_At**
+Updated_At**
 
 | Id_Pago (PK) | Id_Usuario (FK) | Id_Metodo_Pago (FK) | Monto_Total | Estado     | Created_At           | Updated_At           |
 |-------------|---------------|------------------|------------|-----------|----------------------|----------------------|
@@ -285,7 +284,7 @@ Normalización de la tabla Usuarios:
 ### Usuarios
     Id_Usuario (PK)
     Rol (Cliente, Trabajador, etc.)
-    Cui
+    Identificacion_Nacional
     Nombre
     Apellido
     Correo
@@ -445,10 +444,11 @@ Normalización de Orden_Compra:
 ### Usuarios
     Id_Usuario (PK)
     Rol (Cliente, Trabajador, etc.)
-    Cui
+    Identificacion_Nacional
     Nombre
     Apellido
     Correo
+    Contrasena
     Telefono
     Estado (Activo o Inactivo)
     Fecha_Registro
@@ -483,13 +483,6 @@ Normalización de Orden_Compra:
     Created_At
     Updated_At
 
-### Sedes
-    Id_Sede (PK)
-    Nombre
-    Direccion
-    Created_At
-    Updated_At
-
 Se implementaron dos nuevas tablas: Departamentos y Cargos. Estas tablas contienen la información descriptiva de los departamentos y cargos de la empresa, permitiendo que múltiples trabajadores puedan estar asociados a un mismo departamento o cargo sin necesidad de duplicar la información descriptiva.
 
 ### Departamentos
@@ -503,6 +496,13 @@ Se implementaron dos nuevas tablas: Departamentos y Cargos. Estas tablas contien
     Id_Cargo (PK)
     Nombre
     Descripcion
+    Created_At
+    Updated_At
+
+### Sedes
+    Id_Sede (PK)
+    Nombre
+    Direccion
     Created_At
     Updated_At
 
@@ -557,6 +557,22 @@ Se implementaron dos nuevas tablas: Departamentos y Cargos. Estas tablas contien
     Created_At
     Updated_At
 
+### Pagos
+    Id_Pago (PK)
+    Id_Orden (FK)
+    Fecha_Transaccion
+    Id_Metodo_Pago (FK, referencia a Metodos_Pago)
+    Estado (Pendiente, Aprobado, Rechazado)
+    Created_At
+    Updated_At
+
+### Metodos_Pago
+    Id_Metodo_Pago (PK)
+    Nombre
+    Descripcion
+    Created_At
+    Updated_At
+
 ### Envios
     Id_Envio (PK)
     Id_Orden (FK)
@@ -565,15 +581,6 @@ Se implementaron dos nuevas tablas: Departamentos y Cargos. Estas tablas contien
     Empresa_Transporte
     Numero_Seguimiento
     Estado (En tránsito, Entregado, Devuelto)
-    Created_At
-    Updated_At
-
-### Pagos
-    Id_Pago (PK)
-    Id_Orden (FK)
-    Fecha_Transaccion
-    Id_Metodo_Pago (FK, referencia a Metodos_Pago)
-    Estado (Pendiente, Aprobado, Rechazado)
     Created_At
     Updated_At
 
@@ -587,24 +594,24 @@ Se implementaron dos nuevas tablas: Departamentos y Cargos. Estas tablas contien
     Updated_At
 
 ### Traslado_Productos
-        Id_Traslado (PK)
-        Fecha_Movimiento
-        Id_Sede_Origen (FK, referencia a Sedes)
-        Id_Sede_Destino (FK, referencia a Sedes)
-        Estado (En preparación, En tránsito, Entregado, Cancelado)
-        Fecha_Estimada_Llegada
-        Id_Empresa_Transporte (FK, referencia a Empresas_Transporte)
-        Created_At
-        Updated_At
+    Id_Traslado (PK)
+    Fecha_Movimiento
+    Id_Sede_Origen (FK, referencia a Sedes)
+    Id_Sede_Destino (FK, referencia a Sedes)
+    Estado (En preparación, En tránsito, Entregado, Cancelado)
+    Fecha_Estimada_Llegada
+    Id_Empresa_Transporte (FK, referencia a Empresas_Transporte)
+    Created_At
+    Updated_At
 
 ### Detalle_Traslado_Productos
-        Id_Detalle_Traslado (PK)
-        Id_Traslado (FK, referencia a Traslados)
-        Id_Producto (FK, referencia a Productos)
-        Cantidad_Transferida
-        Estado_Producto (Pendiente, Enviado, Recibido)
-        Created_At
-        Updated_At
+    Id_Detalle_Traslado (PK)
+    Id_Traslado (FK, referencia a Traslados)
+    Id_Producto (FK, referencia a Productos)
+    Cantidad_Transferida
+    Estado_Producto (Pendiente, Enviado, Recibido)
+    Created_At
+    Updated_At
 
 Se creó una nueva entidad llamada Empresas_Transporte para almacenar la información relacionada con las empresas que realizan el transporte de productos. Esta tabla incluye un identificador único, el nombre de la empresa y la información de contacto, evitando así la repetición de estos datos en la tabla de traslados.
 
@@ -615,9 +622,3 @@ Se creó una nueva entidad llamada Empresas_Transporte para almacenar la informa
     Created_At
     Updated_At
 
-### Metodos_Pago
-    Id_Metodo_Pago (PK)
-    Nombre
-    Descripcion
-    Created_At
-    Updated_At

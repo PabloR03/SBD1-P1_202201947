@@ -19,7 +19,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Orden_Compra_Id_Orden" id="7459BB88-A9CB-132E-0018-A7454FC953FC">
+<Column name="Id_Orden" id="7459BB88-A9CB-132E-0018-A7454FC953FC">
 <createdBy>rodri</createdBy>
 <createdTime>2025-03-01 15:39:48 UTC</createdTime>
 <generatorID>24B37422-E174-E401-1FB4-5C714A9F048E</generatorID>
@@ -46,7 +46,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Metodos_Pago_Id_Metodo_Pago" id="FAD840CD-0442-4CB7-EEBA-B08B7CBA1D0F">
+<Column name="Id_Metodo_Pago" id="FAD840CD-0442-4CB7-EEBA-B08B7CBA1D0F">
 <createdBy>rodri</createdBy>
 <createdTime>2025-03-01 15:39:48 UTC</createdTime>
 <generatorID>F75A5B00-ABE4-27B8-F3BE-37CDCFCB3C0E</generatorID>
