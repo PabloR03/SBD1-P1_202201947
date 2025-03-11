@@ -139,10 +139,10 @@ exports.getUserProfile = async (req, res) => {
 exports.updateUser = async (req, res) => {
     try {
         const userId = req.params.id;
-        const { Telefono, Correo } = req.body;
+        const { Telefono, Correo, Nombre, Apellido, Estado } = req.body;
 
         // Verificar si hay datos para actualizar
-        if (!Telefono && !Correo) {
+        if (!Telefono && !Correo && !Nombre && !Apellido && !Estado) {
             return res.status(400).json({
                 status: "error",
                 message: "No se proporcionaron datos para actualizar"
@@ -160,7 +160,7 @@ exports.updateUser = async (req, res) => {
             });
         }
 
-        // Construir consulta dinámicamente
+        // Construir consulta dinámica
         let updateQuery = `UPDATE usuarios SET `;
         let updateParams = { id: userId };
         let updates = [];
@@ -173,6 +173,21 @@ exports.updateUser = async (req, res) => {
             updates.push("Correo = :correo");
             updateParams.correo = Correo;
         }
+        if (Nombre) {
+            updates.push("Nombre = :nombre");
+            updateParams.nombre = Nombre;
+        }
+        if (Apellido) {
+            updates.push("Apellido = :apellido");
+            updateParams.apellido = Apellido;
+        }
+        if (Estado) {
+            updates.push("Estado = :estado");
+            updateParams.estado = Estado;
+        }
+
+        // Actualizar el campo Updated_At con la fecha y hora actuales
+        updates.push("Updated_At = CURRENT_TIMESTAMP");
 
         updateQuery += updates.join(", ") + " WHERE Id_Usuario = :id";
 
@@ -181,11 +196,46 @@ exports.updateUser = async (req, res) => {
 
         res.status(200).json({
             status: "success",
-            message: "User updated successfully"
+            message: "Usuario actualizado exitosamente"
         });
 
     } catch (error) {
         console.error("Error al actualizar usuario:", error);
+        res.status(500).json({
+            status: "error",
+            message: "Error interno del servidor"
+        });
+    }
+};
+
+exports.deleteUser = async (req, res) => {
+    try {
+        const userId = req.params.id;
+
+        // Verificar si el usuario existe
+        const checkUserQuery = `SELECT Id_Usuario FROM usuarios WHERE Id_Usuario = :id`;
+        const checkResult = await db.executeQuery(checkUserQuery, { id: userId });
+
+        if (checkResult.rows.length === 0) {
+            return res.status(404).json({
+                status: "error",
+                message: "Usuario no encontrado"
+            });
+        }
+
+        // Actualizar el estado del usuario a "Inactivo"
+        const updateQuery = `UPDATE usuarios SET Estado = 'Inactivo' WHERE Id_Usuario = :id`;
+        const updateParams = { id: userId };
+
+        await db.executeQuery(updateQuery, updateParams, { autoCommit: true });
+
+        res.status(200).json({
+            status: "success",
+            message: "Usuario inactivado exitosamente"
+        });
+
+    } catch (error) {
+        console.error("Error al inactivar/eliminar usuario:", error);
         res.status(500).json({
             status: "error",
             message: "Error interno del servidor"

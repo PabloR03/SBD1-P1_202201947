@@ -35,4 +35,6 @@ router.get('/users/:id', authMiddleware.verifyToken, userController.getUserProfi
 
 router.put('/users/:id', userController.updateUser);
 
+router.delete('/users/:id', userController.deleteUser);
+
 module.exports = router;
