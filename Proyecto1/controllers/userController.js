@@ -108,3 +108,87 @@ exports.createUser = async (req, res, next) => {
         next(error);
     }
 };
+
+exports.getUserProfile = async (req, res) => {
+    const userId = req.params.id;
+
+    try {
+        const query = 'SELECT Id_Usuario, Nombre, Apellido, Correo, Telefono FROM usuarios WHERE Id_Usuario = :id';
+        const result = await db.executeQuery(query, { id: userId });
+
+        if (result.rows.length === 0) {
+            return res.status(404).json({ message: 'Usuario no encontrado' });
+        }
+
+        const user = result.rows[0];
+
+        res.json({
+            id: user.ID_USUARIO,
+            nombre: user.NOMBRE,
+            apellido: user.APELLIDO,
+            correo: user.CORREO,
+            telefono: user.TELEFONO
+        });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Error al obtener el perfil de usuario' });
+    }
+};
+
+exports.updateUser = async (req, res) => {
+    try {
+        const userId = req.params.id;
+        const { Telefono, Correo } = req.body;
+
+        // Verificar si hay datos para actualizar
+        if (!Telefono && !Correo) {
+            return res.status(400).json({
+                status: "error",
+                message: "No se proporcionaron datos para actualizar"
+            });
+        }
+
+        // Verificar si el usuario existe
+        const checkUserQuery = `SELECT Id_Usuario FROM usuarios WHERE Id_Usuario = :id`;
+        const checkResult = await db.executeQuery(checkUserQuery, { id: userId });
+
+        if (checkResult.rows.length === 0) {
+            return res.status(404).json({
+                status: "error",
+                message: "Usuario no encontrado"
+            });
+        }
+
+        // Construir consulta dinámicamente
+        let updateQuery = `UPDATE usuarios SET `;
+        let updateParams = { id: userId };
+        let updates = [];
+
+        if (Telefono) {
+            updates.push("Telefono = :telefono");
+            updateParams.telefono = Telefono;
+        }
+        if (Correo) {
+            updates.push("Correo = :correo");
+            updateParams.correo = Correo;
+        }
+
+        updateQuery += updates.join(", ") + " WHERE Id_Usuario = :id";
+
+        // Ejecutar la actualización
+        await db.executeQuery(updateQuery, updateParams, { autoCommit: true });
+
+        res.status(200).json({
+            status: "success",
+            message: "User updated successfully"
+        });
+
+    } catch (error) {
+        console.error("Error al actualizar usuario:", error);
+        res.status(500).json({
+            status: "error",
+            message: "Error interno del servidor"
+        });
+    }
+};

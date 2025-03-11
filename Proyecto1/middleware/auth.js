@@ -2,35 +2,36 @@ const jwt = require('jsonwebtoken');
 
 const JWT_SECRET = process.env.JWT_SECRET || 'tu_clave_secreta_temporal';
 
-    // Middleware para verificar el token JWT
-    exports.verifyToken = (req, res, next) => {
+exports.verifyToken = (req, res, next) => {
     try {
-        // Obtener el token del header Authorization
         const authHeader = req.headers.authorization;
-        
+        console.log("Authorization Header recibido:", authHeader); // 🔍 Verifica qué llega en la cabecera
+
         if (!authHeader || !authHeader.startsWith('Bearer ')) {
-        return res.status(401).json({
-            status: "error",
-            message: "No autorizado, token no proporcionado"
-        });
+            console.log("No se envió un token válido.");
+            return res.status(401).json({
+                status: "error",
+                message: "No autorizado, token no proporcionado"
+            });
         }
-        
+
         const token = authHeader.split(' ')[1];
-        
-        // Verificar el token
+        console.log("Token extraído:", token); // 🔍 Verifica el token extraído
+
         const decoded = jwt.verify(token, JWT_SECRET);
-        
-        // Agregar la información del usuario al objeto request
+        console.log("Token decodificado correctamente:", decoded); // 🔍 Muestra el contenido del token
+
         req.user = decoded;
-        
         next();
     } catch (error) {
+        console.error("Error al verificar el token:", error.message);
         return res.status(401).json({
-        status: "error",
-        message: "Token inválido o expirado"
+            status: "error",
+            message: "Token inválido o expirado"
         });
     }
-    };
+};
+
 
     // Middleware para verificar roles
     exports.checkRole = (...roles) => {

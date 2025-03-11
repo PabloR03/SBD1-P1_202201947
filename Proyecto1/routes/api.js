@@ -31,4 +31,8 @@ router.get('/admin',
     }
 );
 
+router.get('/users/:id', authMiddleware.verifyToken, userController.getUserProfile);
+
+router.put('/users/:id', userController.updateUser);
+
 module.exports = router;
