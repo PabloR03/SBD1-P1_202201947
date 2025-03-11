@@ -2,14 +2,12 @@ const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/userController');
 const authController = require('../controllers/authController');
+const productController = require('../controllers/productController');
+const categoryController = require('../controllers/categoryController');
 const authMiddleware = require('../middleware/auth');
 
-// Rutas públicas
 router.post('/users', userController.createUser);
 router.post('/login', authController.loginUser);
-
-// Rutas protegidas (requieren autenticación)
-// Ejemplo de ruta protegida que requiere rol específico
 router.get('/profile', authMiddleware.verifyToken, (req, res) => {
     res.status(200).json({
         status: "success",
@@ -17,8 +15,6 @@ router.get('/profile', authMiddleware.verifyToken, (req, res) => {
         user: req.user
     });
 });
-
-// Ejemplo de ruta que requiere rol específico (solo Trabajadores)
 router.get('/admin', 
     authMiddleware.verifyToken, 
     authMiddleware.checkRole('Trabajador'), 
@@ -30,11 +26,11 @@ router.get('/admin',
         });
     }
 );
-
 router.get('/users/:id', authMiddleware.verifyToken, userController.getUserProfile);
-
 router.put('/users/:id', userController.updateUser);
-
 router.delete('/users/:id', userController.deleteUser);
+
+router.post('/categories', categoryController.createCategory);
+router.post('/products', productController.createProduct);
 
 module.exports = router;

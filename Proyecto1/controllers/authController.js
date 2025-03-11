@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 // Configuración para el JWT
-const JWT_SECRET = process.env.JWT_SECRET || 'tu_clave_secreta_temporal'; // Idealmente esto debe estar en variables de entorno
+const JWT_SECRET = process.env.JWT_SECRET || 'andres';
 const JWT_EXPIRES_IN = '24h';
 
 // Login de usuario

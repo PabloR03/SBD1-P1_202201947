@@ -34,21 +34,25 @@ async function executeQuery(query, params = [], options = {}) {
     let connection;
     try {
         connection = await oracledb.getPool().getConnection();
+        
+        // Ajuste para ejecutar la consulta con parámetros de salida (como en RETURNING INTO)
         const result = await connection.execute(query, params, { 
-        outFormat: oracledb.OUT_FORMAT_OBJECT,
-        ...options 
+            outFormat: oracledb.OUT_FORMAT_OBJECT,
+            autoCommit: true, // Habilitar commit automático para consultas de inserción
+            ...options 
         });
+
         return result;
     } catch (err) {
         console.error('Error al ejecutar la consulta:', err);
         throw err;
     } finally {
         if (connection) {
-        try {
-            await connection.close();
-        } catch (err) {
-            console.error('Error al cerrar la conexión:', err);
-        }
+            try {
+                await connection.close();
+            } catch (err) {
+                console.error('Error al cerrar la conexión:', err);
+            }
         }
     }
 }
