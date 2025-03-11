@@ -5,6 +5,7 @@ const authController = require('../controllers/authController');
 const productController = require('../controllers/productController');
 const categoryController = require('../controllers/categoryController');
 const orderController = require('../controllers/orderController');
+const paymentController = require('../controllers/paymentController');
 const authMiddleware = require('../middleware/auth');
 
 router.post('/users', userController.createUser);
@@ -42,5 +43,8 @@ router.post('/orders', orderController.createOrder);
 router.get('/orders', orderController.listOrders);
 router.get('/orders/:id', orderController.getOrderDetails);
 router.put('/orders/:id', orderController.updateOrderStatus);
+
+router.post('/payments', paymentController.registerPayment);
+router.get('/payments', paymentController.listPayments);
 
 module.exports = router;
