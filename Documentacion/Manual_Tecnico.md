@@ -961,7 +961,7 @@ Se creó una nueva entidad llamada Empresas_Transporte para almacenar la informa
 - **Created_At:** Fecha de creación del registro.
 - **Updated_At:** Fecha de última actualización del registro.
 
-![Esquema Logico](/Documentacion/Logico1.jpg)
+![Esquema Logico](/Documentacion/Img_Modelos/Logico1.jpg)
 ---
 
 # [Esquema Logico](/Documentacion/Modelos/Relational.pdf)
@@ -1199,7 +1199,7 @@ Se creó una nueva entidad llamada Empresas_Transporte para almacenar la informa
 | Empresas_Transporte |  |  |  |  |  |  |  |  |  |  |  |  |  | 1:N |  |  | 1:N |  |  |  |
 | Metodos_Pago |  |  | 1:N |  |  |  |  |  |  |  |  |  |  |  | 1:N |  |  |  |  |  |
 
-![Diagrama de Relaciones](/Documentacion/Relational1.jpg)
+![Diagrama de Relaciones](/Documentacion/Img_Modelos/Relational1.jpg)
 
 # Esquema Fisico
 DROP TABLE DETALLE_TRASLADO_PRODUCTOS CASCADE CONSTRAINTS;
