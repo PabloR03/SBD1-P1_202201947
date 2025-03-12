@@ -1477,3 +1477,392 @@ WHERE table_name IN (
     'ORDEN_COMPRA', 'DETALLE_ORDEN', 'PAGOS', 'EMPRESAS_TRANSPORTE',
     'ENVIOS', 'DEVOLUCIONES', 'TRASLADO_PRODUCTOS', 'DETALLE_TRASLADO_PRODUCTOS'
 );
+
+# Descripcion de API para Consultas
+
+## Estructura Principal de la API
+
+```
+config/ → Contiene la configuración de la base de datos (database.js).
+
+controllers/ → Aquí están los controladores para manejar la lógica de negocio de las distintas entidades:
+
+    authController.js → Manejo de autenticación.
+    categoryController.js → Lógica relacionada con categorías.
+    orderController.js → Procesamiento de órdenes.
+    paymentController.js → Manejo de pagos.
+    productController.js → Control de productos.
+    userController.js → Gestión de usuarios.
+
+middleware/ → Contiene funciones de middleware, como:
+    auth.js → Probablemente maneja la autenticación y autorización de usuarios.
+errorHandler.js → Manejo de errores globales en la API.
+
+routes/ → Define las rutas de la API (api.js), donde probablemente se vinculan los controladores con las rutas de los endpoints.
+
+Archivos base:
+    .env → Configuración de variables de entorno.
+    package.json → Dependencias y configuración del proyecto.
+    server.js → Archivo principal que inicia la API.
+```
+
+## config
+### /database.js
+
+ maneja la conexión entre tu API y la base de datos Oracle. Se encarga de establecer un grupo de conexiones para que la API pueda comunicarse con la base de datos de manera eficiente, evitando abrir y cerrar conexiones constantemente.
+
+Las principales funciones de este módulo son:
+- Iniciar la conexión cuando se enciende la API.
+- Ejecutar consultas SQL para obtener, agregar o modificar datos en la base de datos.
+- Cerrar las conexiones cuando ya no se necesiten para liberar recursos.
+
+Gracias a este sistema, la API puede manejar múltiples solicitudes al mismo tiempo sin afectar el rendimiento de la base de datos. Además, usa variables de entorno para proteger credenciales sensibles, asegurando que la conexión sea segura y configurable.
+
+![database.js](/Documentacion/Img_ManualTecnico/image.png)
+
+## controllers
+### /authController.js
+
+El archivo authController.js gestiona la autenticación de usuarios en la API mediante el proceso de login. Se conecta a la base de datos para validar credenciales y, en caso de éxito, genera un token JWT que permite la autenticación en futuras solicitudes.
+
+- Proceso de Autenticación
+- Recepción de credenciales: Se extraen el correo y la contraseña del cuerpo de la petición.
+- Validación de datos: Se verifica que ambos campos sean proporcionados.
+- Consulta a la base de datos: Se busca un usuario con el correo proporcionado.
+- Verificación de existencia y estado:
+    - Si el usuario no existe, se responde con un error de credenciales inválidas.
+    - Si el usuario existe pero su cuenta está inactiva, se restringe el acceso.
+- Comparación de contraseña: Se usa bcrypt.compare() para validar la contraseña ingresada con la almacenada en la base de datos.
+- Generación de token JWT:
+    - Si la contraseña es válida, se genera un token JWT con los datos del usuario (ID, Rol).
+    - Este token tiene una expiración de 24 horas y se firma con una clave secreta (JWT_SECRET).
+- Registro de última sesión: Se actualiza la fecha de último acceso (Updated_At) en la base de datos.
+- Respuesta exitosa: Se envía el token junto con información del usuario (ID, Nombre, Correo, Rol).
+Seguridad
+- Se usa bcrypt para manejar contraseñas cifradas.
+- Se implementa JWT para la autenticación basada en tokens.
+- Se restringe el acceso a cuentas inactivas.
+
+![alt text](/Documentacion/Img_ManualTecnico/image-1.png)
+
+### /categoryController.js
+
+El archivo categoryController.js gestiona la creación de categorías en la API. Su función principal es validar, verificar e insertar nuevas categorías en la base de datos, asegurando que no se dupliquen.
+
+Proceso de Creación de Categoría
+- Recepción de datos: Se extraen Nombre y Descripción desde la petición.
+Validación de datos:
+    - Se verifica que el campo Nombre sea obligatorio.
+    - Si falta, se devuelve un error de solicitud incorrecta (400 Bad Request).
+Verificación de existencia:
+- Se consulta la base de datos para comprobar si ya existe una categoría con el mismo nombre.
+- Si la categoría ya existe, se devuelve un error de conflicto (409 Conflict).
+Inserción en la base de datos:
+- Se ejecuta un INSERT INTO para registrar la nueva categoría.
+- Se usa RETURNING INTO para recuperar el Id_Categoria recién generado.
+Confirmación de creación:
+- Se envía una respuesta exitosa (201 Created) con el ID de la nueva categoría.
+
+![alt text](/Documentacion/Img_ManualTecnico/image-2.png)
+
+### /orderController.js
+
+El orderController.js gestiona la creación, consulta y actualización de órdenes de compra en la API. Implementa validaciones estrictas, transacciones atómicas y control de errores para garantizar la integridad de los datos.
+
+#### Creación de Orden (createOrder)
+Proceso para registrar una nueva orden de compra en la base de datos.
+
+Validaciones previas:
+
+Se verifica que todos los campos requeridos estén presentes (userId, items, shippingAddress, paymentMethod).
+Se revisa que los items sean un arreglo con productos válidos (productId y quantity).
+Se consulta si el userId existe en la base de datos.
+Se valida que cada productId en items exista y se recuperan sus precios.
+Proceso de inserción:
+
+Se crea la orden en la tabla orden_compra, inicializando su estado como "processing".
+Se obtiene el orderId generado.
+Se insertan los detalles de la orden en detalle_orden, registrando cada producto con su cantidad y precio unitario.
+Se devuelve una respuesta exitosa (201 Created) con el orderId, monto total y estado inicial.
+Manejo de errores:
+
+Si falta algún campo, se devuelve 400 Bad Request.
+Si el usuario no existe, 404 Not Found.
+Si algún producto no es válido, 404 Not Found.
+Se captura cualquier error inesperado.
+
+![alt text](/Documentacion/Img_ManualTecnico/image-3.png)
+
+#### Listado de Órdenes (listOrders)
+Consulta todas las órdenes registradas, permitiendo filtros dinámicos:
+
+status: Filtrar por estado de orden (processing, shipped, etc.).
+startDate / endDate: Buscar órdenes dentro de un rango de fechas.
+userId: Obtener órdenes de un usuario específico.
+Proceso de consulta:
+
+Se construye la SELECT de forma dinámica según los filtros proporcionados.
+Se usa GROUP BY para calcular el monto total por orden.
+Se ordena por Fecha_Creacion DESC (más recientes primero).
+Se devuelve un listado estructurado con orderId, userId, status, createdAt y totalAmount.
+Manejo de errores:
+
+Si hay un problema en la consulta, se captura y reenvía al middleware de errores.
+
+![alt text](/Documentacion/Img_ManualTecnico/image-4.png)
+
+#### Detalles de Orden (getOrderDetails)
+Obtiene toda la información de una orden, incluyendo productos comprados y totales.
+Proceso de consulta:
+
+Se valida que el orderId sea un número.
+Se consulta la orden en orden_compra.
+Se recuperan los productos de detalle_orden, junto con sus nombres desde productos.
+Se calcula el monto total sumando (Cantidad × Precio_Unitario).
+Se devuelve una estructura detallada con:
+orderId, userId, status, createdAt
+Lista de items: productId, productName, quantity, price, subtotal
+totalAmount
+Manejo de errores:
+
+Si el orderId no es válido, 400 Bad Request.
+Si la orden no existe, 404 Not Found.
+
+![alt text](/Documentacion/Img_ManualTecnico/image-5.png)
+
+#### Actualización de Estado de Orden (updateOrderStatus)
+Permite modificar el estado de una orden (processing, shipped, delivered, cancelled).
+
+Validaciones previas:
+
+Se verifica que el orderId sea válido.
+Se revisa que el status proporcionado esté dentro de los valores permitidos.
+Se confirma que la orden existe antes de actualizarla.
+Proceso de actualización:
+
+Se ejecuta un UPDATE en orden_compra para cambiar el estado.
+Se devuelve una respuesta con el nuevo estado actualizado.
+Manejo de errores:
+
+Si el orderId es inválido, 400 Bad Request.
+Si el estado no es válido, 400 Bad Request.
+Si la orden no existe, 404 Not Found.
+
+![alt text](/Documentacion/Img_ManualTecnico/image-6.png)
+
+### /paymentController.js
+Permite registrar un pago para una orden de compra, validando la existencia de la orden y el monto del pago.
+
+#### Registrar un pago (registerPayment)
+Esta función maneja el proceso de registrar un pago para una orden de compra. Se validan varios parámetros, se verifica la existencia de la orden, el método de pago, y se asegura de que el monto de pago sea correcto.
+
+Validaciones previas:
+Se valida que orderId, amount y method estén presentes en el cuerpo de la solicitud.
+Se verifica si la orden de compra existe en la base de datos.
+Se comprueba que la orden no esté cancelada.
+Se valida que el monto del pago coincida con el monto total de la orden.
+Proceso de registro de pago:
+Se verifica si el método de pago existe para el usuario; si no, se agrega a la base de datos.
+Se registra el pago en la tabla pagos.
+Si la orden no tiene el estado 'processing', se actualiza su estado a 'processing'.
+Manejo de errores:
+Si falta algún campo obligatorio, devuelve 400 Bad Request con un mensaje de error.
+Si la orden no existe, devuelve 404 Not Found.
+Si la orden está cancelada, devuelve 400 Bad Request.
+Si el monto del pago no coincide, devuelve 400 Bad Request.
+En caso de error en la base de datos o algún otro fallo, maneja el error y lo pasa al middleware de manejo de errores.
+
+![alt text](/Documentacion/Img_ManualTecnico/image-7.png)
+
+#### Listar pagos (listPayments)
+Esta función permite obtener una lista de pagos realizados, filtrada por diversos parámetros, tales como el orderId, status, startDate, endDate y method.
+
+Validaciones previas:
+No se requiere validación de parámetros, ya que son opcionales y se usan para filtrar los resultados.
+Proceso de listado de pagos:
+Se construye una consulta SQL con las condiciones de filtrado basadas en los parámetros recibidos en la solicitud.
+Se ejecuta la consulta SQL y se agrupan los resultados por paymentId, orderId, method, status y createdAt.
+Los resultados se formatean antes de ser enviados como respuesta.
+Manejo de errores:
+Si ocurre un error durante la ejecución de la consulta SQL, se captura el error y se pasa al middleware de manejo de errores.
+
+![alt text](/Documentacion/Img_ManualTecnico/image-8.png)
+
+### /productController.js
+El archivo productController.js maneja la lógica relacionada con los productos en la API. Permite crear, actualizar, eliminar y consultar productos, así como listar productos por categoría y buscar productos por nombre.
+
+
+#### createProduct
+Esta función maneja la creación de un nuevo producto en la base de datos. Primero valida los datos requeridos (como el SKU, nombre, precio, etc.). Luego, realiza una verificación para asegurarse de que el SKU no exista previamente en la base de datos y que la categoría proporcionada exista. Si todo está en orden, inserta un nuevo producto en la tabla productos, y devuelve el ID del producto recién creado.
+
+![alt text](/Documentacion/Img_ManualTecnico/image-9.png)
+
+#### getProducts
+Esta función obtiene todos los productos de la base de datos. Realiza una consulta para recuperar los productos con sus ID, nombre, precio y stock disponible. Si no se encuentran productos, responde con un mensaje de error. Si se encuentran productos, los formatea y devuelve en la respuesta como un array de objetos.
+
+![alt text](/Documentacion/Img_ManualTecnico/image-10.png)
+
+#### getProductById
+Esta función busca y devuelve un producto específico basado en su ID. Si el producto existe, obtiene detalles como su nombre, descripción, precio, disponibilidad y la categoría a la que pertenece. Si el producto no se encuentra, devuelve un error. En caso de que haya una descripción en formato CLOB, la convierte a texto antes de enviarla en la respuesta.
+
+![alt text](/Documentacion/Img_ManualTecnico/image-11.png)
+
+#### updateProduct
+Esta función permite actualizar los detalles de un producto específico. Verifica si el producto existe, y luego construye dinámicamente una consulta SQL para actualizar solo los campos que han sido proporcionados. Si se encuentra algún error relacionado con claves únicas (como un SKU o Slug duplicado), devuelve un error específico. Si la actualización es exitosa, responde con un mensaje de éxito.
+
+![alt text](/Documentacion/Img_ManualTecnico/image-12.png)
+
+#### deleteProduct
+Esta función elimina un producto de forma lógica, actualizando su disponibilidad a 0 (no disponible). Primero verifica que el producto exista, luego marca el producto como no disponible y actualiza la fecha de la última modificación (Updated_At). Si no se encuentra el producto o hay algún error durante el proceso, devuelve un mensaje de error.
+
+![alt text](/Documentacion/Img_ManualTecnico/image-13.png)
+
+### /userController.js
+El archivo userController.js maneja la lógica relacionada con los usuarios en la API. Permite registrar nuevos usuarios, autenticarlos, actualizar sus datos y obtener información de usuarios existentes.
+
+#### createUser
+Esta función se encarga de crear un nuevo usuario en la base de datos. Primero, valida que todos los campos necesarios (como rol, identificación, nombre, correo, contraseña, etc.) estén presentes. Luego, verifica si el usuario ya existe en la base de datos mediante el correo o la identificación nacional. Si no existe, se procede a hashear la contraseña utilizando bcrypt para garantizar la seguridad, y finalmente, inserta al nuevo usuario en la base de datos. Si todo es exitoso, responde con el ID del usuario creado.
+
+![alt text](/Documentacion/Img_ManualTecnico/image-14.png)
+
+#### getUserProfile
+Esta función permite obtener el perfil de un usuario específico utilizando su id. Realiza una consulta para obtener los detalles básicos del usuario (nombre, apellido, correo y teléfono). Si no encuentra el usuario con el id proporcionado, devuelve un error 404. Si el usuario existe, se devuelve la información del perfil en formato JSON.
+
+![alt text](/Documentacion/Img_ManualTecnico/image-15.png)
+
+#### updateUser
+Esta función actualiza los detalles de un usuario específico. Primero, valida que se proporcionen datos para actualizar. Luego, verifica si el usuario existe en la base de datos. Después, construye una consulta dinámica para actualizar los campos proporcionados (como teléfono, correo, nombre, apellido y estado). Si la actualización es exitosa, responde con un mensaje de éxito. Si hay un error, responde con un mensaje de error.
+
+![alt text](/Documentacion/Img_ManualTecnico/image-16.png)
+
+#### deleteUser
+Esta función permite "inactivar" un usuario, es decir, cambiar su estado a "Inactivo". Primero, verifica que el usuario exista en la base de datos. Luego, actualiza el estado del usuario a "Inactivo". Si la operación es exitosa, responde con un mensaje de éxito. En caso de error, responde con un mensaje de error.
+
+![alt text](/Documentacion/Img_ManualTecnico/image-17.png)
+
+## middleware
+
+### /auth.js
+
+#### verifyToken
+Este middleware valida la autenticidad de un JWT (JSON Web Token) enviado en la cabecera de autorización de una solicitud HTTP.
+
+Detalles técnicos:
+El token JWT es un mecanismo de autenticación basado en un estándar abierto, que se utiliza para validar la identidad de un usuario de manera segura.
+La cabecera de autorización se espera que tenga el formato Bearer <token>, donde el token es la cadena de caracteres codificada.
+jwt.verify(token, JWT_SECRET) es la función que decodifica y verifica que el token es válido. Esta función usa la clave secreta (JWT_SECRET) para asegurar que el token no ha sido alterado. Si el token es válido, devuelve el contenido decodificado del token, que suele incluir información como el ID del usuario y el rol.
+En caso de que el token sea inválido o haya expirado, jwt.verify lanzará una excepción que es capturada en el bloque catch, lo que permite devolver un error 401 con el mensaje "Token inválido o expirado".
+Si el token es válido, los datos decodificados se almacenan en req.user, lo que hace posible que el siguiente middleware o controlador tenga acceso a la información del usuario autenticado.
+
+![alt text](/Documentacion/Img_ManualTecnico/image-18.png)
+
+#### checkRole
+Este middleware se asegura de que el usuario autenticado tenga uno de los roles necesarios para acceder a una ruta.
+
+Detalles técnicos:
+Este middleware recibe uno o más roles como parámetros (...roles). Los roles pueden ser, por ejemplo, ['Admin', 'Editor'].
+La verificación se realiza comprobando que req.user esté presente, lo cual indica que el token fue verificado con éxito en el middleware anterior.
+Si req.user no existe (es decir, si el usuario no está autenticado), el middleware devuelve un error 401.
+Después, compara el valor de req.user.role con los roles requeridos. Si el rol del usuario no se encuentra en la lista de roles aceptados, devuelve un error 403 (Prohibido).
+Si el rol es adecuado, el middleware llama a next(), permitiendo que la solicitud continúe hacia el siguiente middleware o controlador.
+
+![alt text](/Documentacion/Img_ManualTecnico/image-19.png)
+
+### /errorHandler.js
+
+Captura del error:
+
+Este middleware recibe cuatro parámetros: err, req, res, y next. Los primeros tres son estándar en Express, pero el parámetro next no se usa en este caso, ya que se trata de un middleware de manejo de errores.
+El err es el objeto de error que se pasa a este middleware desde otros middlewares o controladores de tu aplicación. Este objeto de error puede incluir un mensaje, código de estado, stacktrace y otros detalles, dependiendo de cómo se haya generado el error.
+Log del error:
+
+console.error('Error:', err) es responsable de registrar los detalles del error en la consola para que los desarrolladores puedan inspeccionarlo en la terminal. Es importante para depuración y monitoreo de errores.
+Cálculo del statusCode:
+
+const statusCode = err.statusCode || 500; intenta obtener el código de estado de la propiedad statusCode del objeto de error. Si no existe esta propiedad, se asigna el valor 500, que indica un Error Interno del Servidor. Este valor es común cuando ocurre un error inesperado.
+Envío de la respuesta:
+
+res.status(statusCode).json(...) envía una respuesta en formato JSON con:
+success: false: Indica que la solicitud no fue exitosa.
+message: Es el mensaje de error que se puede incluir en el objeto err. Si no hay un mensaje definido, se utiliza "Error interno del servidor".
+stack: Si el entorno es de desarrollo (process.env.NODE_ENV === 'development'), se incluye el stack trace del error. Esto es útil para el desarrollo, ya que permite ver detalles sobre el lugar exacto donde ocurrió el error en el código. En producción, se omite para no exponer información sensible o detalles del código.
+
+![alt text](/Documentacion/Img_ManualTecnico/image-20.png)
+
+## routes
+
+### /api.js
+
+Dependencias importadas:
+express: Se importa la librería Express para crear y manejar las rutas.
+Controladores (userController, authController, productController, categoryController, orderController, paymentController): Cada controlador se encarga de manejar la lógica de cada entidad o acción. Los controladores son responsables de ejecutar las operaciones relacionadas con la base de datos y devolver las respuestas adecuadas.
+authMiddleware: Contiene el middleware de autenticación y autorización (verifyToken y checkRole).
+Definición de rutas:
+Rutas de usuarios:
+
+POST /users: Llama al createUser del userController para crear un nuevo usuario.
+POST /login: Llama a loginUser del authController para autenticar al usuario.
+GET /profile: Protegida por el middleware verifyToken de autenticación. Devuelve el perfil del usuario autenticado.
+GET /users/:id: Llama a getUserProfile del userController para obtener los detalles de un usuario específico por su id. Requiere autenticación.
+PUT /users/:id: Llama a updateUser del userController para actualizar los detalles de un usuario específico.
+DELETE /users/:id: Llama a deleteUser del userController para eliminar un usuario específico.
+Rutas de administración:
+
+GET /admin: Protegida por los middlewares verifyToken y checkRole('Trabajador'). Esta ruta solo está accesible para los usuarios con el rol "Trabajador". Retorna la información del área de administración.
+Rutas de categorías:
+
+POST /categories: Llama a createCategory del categoryController para crear una nueva categoría.
+Rutas de productos:
+
+POST /products: Llama a createProduct del productController para crear un nuevo producto.
+GET /products: Llama a getProducts del productController para obtener la lista de productos.
+GET /products/:id: Llama a getProductById del productController para obtener los detalles de un producto específico por su id.
+PUT /products/:id: Llama a updateProduct del productController para actualizar los detalles de un producto específico.
+DELETE /products/:id: Llama a deleteProduct del productController para eliminar un producto específico.
+Rutas de órdenes:
+
+POST /orders: Llama a createOrder del orderController para crear una nueva orden.
+GET /orders: Llama a listOrders del orderController para obtener la lista de órdenes.
+GET /orders/:id: Llama a getOrderDetails del orderController para obtener los detalles de una orden específica.
+PUT /orders/:id: Llama a updateOrderStatus del orderController para actualizar el estado de una orden específica.
+Rutas de pagos:
+
+POST /payments: Llama a registerPayment del paymentController para registrar un nuevo pago.
+GET /payments: Llama a listPayments del paymentController para obtener la lista de pagos.
+Protecciones de autenticación y autorización:
+verifyToken: Este middleware verifica que el token JWT enviado por el cliente sea válido antes de permitir el acceso a las rutas protegidas. Se utiliza en rutas como /profile, /users/:id, y /admin.
+checkRole: Este middleware es utilizado para asegurarse de que el usuario autenticado tenga el rol adecuado para acceder a ciertas rutas. En el caso de la ruta /admin, solo los usuarios con el rol Trabajador tienen acceso.
+
+![alt text](/Documentacion/Img_ManualTecnico/image-21.png)
+
+## server.js
+
+Importación de dependencias:
+
+express: Importas Express para crear el servidor.
+cors: Importas el middleware CORS para habilitar solicitudes entre diferentes dominios.
+db: Importas la configuración de la base de datos, que seguramente contiene métodos para inicializar y cerrar la conexión con la base de datos.
+apiRoutes: Importas tus rutas de API definidas en otro archivo.
+errorHandler: Importas el middleware para manejar los errores.
+Configuración de middleware:
+
+app.use(cors()): Habilitas CORS para permitir que tu API reciba solicitudes de diferentes orígenes.
+app.use(express.json()): Configuras Express para que pueda parsear el cuerpo de las solicitudes en formato JSON.
+Definición del puerto:
+
+const PORT = process.env.PORT || 3000: El puerto de tu servidor se define con process.env.PORT (si está definido en tu archivo .env) o el puerto 3000 por defecto.
+Rutas de la API:
+
+app.use('/api', apiRoutes): Configuras las rutas bajo el prefijo /api, de modo que todas las rutas definidas en el archivo apiRoutes estarán accesibles a través de /api/....
+app.get('/', ...): Definas una ruta raíz (/) que responde con un mensaje indicando que la API de Oracle está funcionando.
+Manejo de errores:
+
+app.use(errorHandler): Después de todas las rutas, defines un middleware para manejar los errores globalmente.
+Iniciar servidor y manejar el cierre:
+
+startServer(): Llamas a una función startServer que maneja la inicialización del servidor y la conexión a la base de datos.
+Primero, se intenta inicializar la base de datos.
+Luego, se inicia el servidor en el puerto definido y se imprimen algunos mensajes de estado.
+Utilizas process.on('SIGINT') para capturar señales de terminación (como cuando presionas Ctrl+C) y realizar una desconexión adecuada de la base de datos antes de cerrar la aplicación.
+
+![alt text](/Documentacion/Img_ManualTecnico//Documentacion/Img_ManualTecnico/image-22.png)
