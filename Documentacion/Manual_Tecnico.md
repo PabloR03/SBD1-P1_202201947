@@ -1865,4 +1865,270 @@ Primero, se intenta inicializar la base de datos.
 Luego, se inicia el servidor en el puerto definido y se imprimen algunos mensajes de estado.
 Utilizas process.on('SIGINT') para capturar señales de terminación (como cuando presionas Ctrl+C) y realizar una desconexión adecuada de la base de datos antes de cerrar la aplicación.
 
-![alt text](/Documentacion/Img_ManualTecnico//Documentacion/Img_ManualTecnico/image-22.png)
+![alt text](/Documentacion/Img_ManualTecnico/image-22.png)
+
+# Descripcion de los Endpoints
+
+## Usuarios
+
+### Crear Usuario
+```
+POST /api/users
+```
+Crea un nuevo usuario en la base de datos.
+
+#### Parámetros
+- Nombre (requerido)
+- Apellido (requerido)
+- Correo (requerido)
+- Contraseña (requerido)
+- Rol (opcional)
+
+#### Respuesta
+- 201 Created: Usuario creado con éxito.
+- 400 Bad Request: Error en los datos proporcionados.
+- 409 Conflict: El correo ya está en uso.
+
+### Iniciar Sesión
+```
+POST /api/login
+```
+Autentica a un usuario y devuelve un token JWT.
+
+#### Parámetros
+- Correo (requerido)
+- Contraseña (requerido)
+
+#### Respuesta
+- 200 OK: Autenticación exitosa, devuelve el token JWT.
+- 400 Bad Request: Error en los datos proporcionados.
+- 401 Unauthorized: Credenciales inválidas.
+
+### Perfil de Usuario
+```
+GET /api/profile
+```
+Obtiene el perfil del usuario autenticado.
+
+#### Parámetros
+- Token JWT (requerido)
+
+#### Respuesta
+- 200 OK: Perfil del usuario autenticado.
+- 401 Unauthorized: Token inválido o expirado.
+
+### Actualizar Usuario
+```
+PUT /api/users/:id
+```
+Actualiza los detalles de un usuario específico.
+
+#### Parámetros
+- ID de Usuario (requerido)
+- Nombre (opcional)
+- Apellido (opcional)
+- Correo (opcional)
+- Contraseña (opcional)
+- Estado (opcional)
+
+#### Respuesta
+- 200 OK: Usuario actualizado con éxito.
+- 400 Bad Request: Error en los datos proporcionados.
+- 404 Not Found: Usuario no encontrado.
+
+### Eliminar Usuario
+```
+DELETE /api/users/:id
+```
+Elimina un usuario de forma lógica (cambia su estado a "Inactivo").
+
+#### Parámetros
+- ID de Usuario (requerido)
+
+#### Respuesta
+- 200 OK: Usuario eliminado con éxito.
+- 404 Not Found: Usuario no encontrado.
+
+## Categorías
+
+### Crear Categoría
+```
+POST /api/categories
+```
+Crea una nueva categoría en la base de datos.
+
+#### Parámetros
+- Nombre (requerido)
+- Descripción (opcional)
+
+#### Respuesta
+- 201 Created: Categoría creada con éxito.
+- 400 Bad Request: Error en los datos proporcionados.
+- 409 Conflict: La categoría ya existe.
+
+## Productos
+
+### Crear Producto
+```
+POST /api/products
+```
+Crea un nuevo producto en la base de datos.
+
+#### Parámetros
+- SKU (requerido)
+- Nombre (requerido)
+- Precio (requerido)
+- Stock (opcional)
+- Categoría (requerido)
+
+#### Respuesta
+- 201 Created: Producto creado con éxito.
+- 400 Bad Request: Error en los datos proporcionados.
+- 409 Conflict: El SKU ya está en uso.
+
+### Listar Productos
+```
+GET /api/products
+```
+Obtiene la lista de todos los productos.
+
+#### Parámetros
+- Ninguno
+
+#### Respuesta
+- 200 OK: Lista de productos.
+- 404 Not Found: No se encontraron productos.
+
+### Detalles de Producto
+```
+GET /api/products/:id
+```
+Obtiene los detalles de un producto específico.
+
+#### Parámetros
+- ID de Producto (requerido)
+
+#### Respuesta
+- 200 OK: Detalles del producto.
+- 404 Not Found: Producto no encontrado.
+
+### Actualizar Producto
+```
+PUT /api/products/:id
+```
+Actualiza los detalles de un producto específico.
+
+#### Parámetros
+- ID de Producto (requerido)
+- SKU (opcional)
+- Nombre (opcional)
+- Precio (opcional)
+- Stock (opcional)
+- Categoría (opcional)
+
+#### Respuesta
+- 200 OK: Producto actualizado con éxito.   
+- 400 Bad Request: Error en los datos proporcionados.
+
+### Eliminar Producto
+```
+DELETE /api/products/:id
+```
+Elimina un producto de forma lógica (cambia su disponibilidad a 0).
+#### Parámetros
+- ID de Producto (requerido)
+
+#### Respuesta
+- 200 OK: Producto eliminado con éxito.
+- 404 Not Found: Producto no encontrado.
+
+## Órdenes
+
+### Crear Orden
+```
+POST /api/orders
+```
+Crea una nueva orden de compra en la base de datos.
+
+#### Parámetros
+- ID de Usuario (requerido)
+- Productos (requerido)
+- Dirección de Envío (requerido)
+- Método de Pago (requerido)
+
+#### Respuesta
+- 201 Created: Orden creada con éxito.
+- 400 Bad Request: Error en los datos proporcionados.
+- 404 Not Found: Usuario o productos no encontrados.
+
+### Listar Órdenes
+```
+GET /api/orders
+```
+Obtiene la lista de todas las órdenes de compra.
+
+#### Parámetros
+- Ninguno
+
+#### Respuesta
+- 200 OK: Lista de órdenes.
+- 404 Not Found: No se encontraron órdenes.
+
+### Detalles de Orden
+```
+GET /api/orders/:id
+```
+Obtiene los detalles de una orden de compra específica.
+
+#### Parámetros
+- ID de Orden (requerido)
+
+#### Respuesta
+- 200 OK: Detalles de la orden.
+- 404 Not Found: Orden no encontrada.
+
+### Actualizar Estado de Orden
+```
+PUT /api/orders/:id
+```
+Actualiza el estado de una orden de compra específica.
+
+#### Parámetros
+- ID de Orden (requerido)
+- Estado (requerido)
+
+#### Respuesta
+- 200 OK: Estado de la orden actualizado con éxito.
+- 400 Bad Request: Error en los datos proporcionados.
+- 404 Not Found: Orden no encontrada.
+
+## Pagos
+
+### Registrar Pago
+```
+POST /api/payments
+```
+Registra un nuevo pago para una orden de compra.
+
+#### Parámetros
+- ID de Orden (requerido)
+- Monto (requerido)
+- Método de Pago (requerido)
+
+#### Respuesta
+- 201 Created: Pago registrado con éxito.
+- 400 Bad Request: Error en los datos proporcionados.
+- 404 Not Found: Orden no encontrada.
+
+### Listar Pagos
+```
+GET /api/payments
+```
+Obtiene la lista de todos los pagos registrados.
+
+#### Parámetros
+- Ninguno
+
+#### Respuesta
+- 200 OK: Lista de pagos.
+- 404 Not Found: No se encontraron pagos.
